@@ -9,8 +9,8 @@ const betsFixture = [
     amount: 5,
     odd: 2.5,
     competitionId: 10,
+    competitionLabel: "Competition 10",
     label: "Match A vs B",
-    selectedWin: "Team A",
     actor: {
       id: 100,
       label: "Team A",
@@ -21,8 +21,8 @@ const betsFixture = [
     amount: 3,
     odd: 3,
     competitionId: 11,
+    competitionLabel: "Competition 11",
     label: "Match B vs C",
-    selectedWin: "Team B",
     actor: {
       id: 101,
       label: "Team B",

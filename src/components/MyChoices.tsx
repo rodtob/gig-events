@@ -87,7 +87,6 @@ export const MyChoices = () => {
             </div>
           </div>
         ))}
-
         <button
           onClick={clearBets}
           className="w-full px-5 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition"
@@ -95,7 +94,6 @@ export const MyChoices = () => {
         >
           Submit Bets
         </button>
-
         <BetsSummary />
       </div>
     </div>

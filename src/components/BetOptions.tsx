@@ -12,7 +12,6 @@ export const BetOptions = ({
 }) => {
   const { bets, toggleBet } = useBetStore();
 
-  // All selected choice IDs for this competition
   const selectedChoiceIds = bets
     .filter((bet) => bet.competitionId === competitionId)
     .map((bet) => bet.id);
