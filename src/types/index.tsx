@@ -44,3 +44,10 @@ export type BetEntry = Choice & {
   competitionId: number;
   competitionLabel: string;
 };
+
+export type AmountInputProps = {
+  bet: BetEntry;
+  handleAmountChange: (bet: BetEntry, value: string) => void;
+  incrementAmount: (bet: BetEntry) => void;
+  decrementAmount: (bet: BetEntry) => void;
+};

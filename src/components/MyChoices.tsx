@@ -1,6 +1,7 @@
 import { useBetStore } from "../store/betStore";
 import type { BetEntry } from "../types";
 import { BetsSummary } from "./BetsSummary";
+import { AmountInput } from "./AmountInput";
 
 export const MyChoices = () => {
   const { bets, updateBetAmount, toggleBet, clearBets } = useBetStore();
@@ -56,40 +57,17 @@ export const MyChoices = () => {
                 {(bet.amount * bet.odd).toFixed(2)})
               </span>
             </div>
-
-            <div className="flex items-center justify-between">
-              <label htmlFor={`bet-amount-${bet.id}`} className="text-sm font-medium">
-                Amount:
-              </label>
-
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => decrementAmount(bet)}
-                  className="px-2 py-1 rounded hover:bg-white-200"
-                >
-                  -
-                </button>
-                <input
-                  type="number"
-                  min={1}
-                  value={bet.amount}
-                  onChange={(e) => handleAmountChange(bet, e.target.value)}
-                  className="w-16 p-1 text-center border rounded-md"
-                  data-testid={`amount-input-${bet.id}`}
-                />
-                <button
-                  onClick={() => incrementAmount(bet)}
-                  className="px-2 py-1 rounded hover:bg-white-200"
-                >
-                  +
-                </button>
-              </div>
-            </div>
+            <AmountInput
+              bet={bet}
+              handleAmountChange={handleAmountChange}
+              incrementAmount={incrementAmount}
+              decrementAmount={decrementAmount}
+            />
           </div>
         ))}
         <button
           onClick={clearBets}
-          className="w-full px-5 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition"
+          className="cursor-pointer w-full px-5 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition"
           data-testid="clear-bets-button"
         >
           Submit Bets
